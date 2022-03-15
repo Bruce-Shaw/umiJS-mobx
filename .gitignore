@@ -1,2 +1,8 @@
-node_modules
-.umi
+/node_modules
+/src/.umi
+/src/.umi-production
+/dist
+/npm-debug.log
+/logs
+/yarn.lock
+.node
