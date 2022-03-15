@@ -9,7 +9,7 @@ export function getRoutes() {
     {
       path: "/",
       exact: true,
-      component: require("@/pages/index.tsx").default,
+      component: require("@/pages/index/index.tsx").default,
     },
   ];
 
