@@ -1,6 +1,6 @@
 // @ts-nocheck
 import {
-  createBrowserHistory,
+  createHashHistory,
   History,
 } from "/Users/xwj/umiJS-mobx/node_modules/@umijs/runtime";
 
@@ -14,10 +14,10 @@ if ((<any>window).routerBase) {
 // remove initial history because of ssr
 let history: History = process.env.__IS_SERVER
   ? null
-  : createBrowserHistory(options);
+  : createHashHistory(options);
 export const createHistory = (hotReload = false) => {
   if (!hotReload) {
-    history = createBrowserHistory(options);
+    history = createHashHistory(options);
   }
 
   return history;

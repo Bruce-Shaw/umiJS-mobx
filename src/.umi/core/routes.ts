@@ -8,8 +8,21 @@ export function getRoutes() {
   const routes = [
     {
       path: "/",
-      exact: true,
-      component: require("@/pages/index/index.tsx").default,
+      component: require("@/layouts/index").default,
+      routes: [
+        {
+          path: "/",
+          redirect: "/index",
+          exact: true,
+        },
+        {
+          title: "首页",
+          name: "首页",
+          path: "/index",
+          component: require("/Users/xwj/umiJS-mobx/src/pages/index").default,
+          exact: true,
+        },
+      ],
     },
   ];
 
