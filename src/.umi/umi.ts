@@ -1,12 +1,15 @@
 // @ts-nocheck
 import "./core/polyfill";
 import "@@/core/devScripts";
+import "../global.js";
 import { plugin } from "./core/plugin";
 import "./core/pluginRegister";
 import { createHistory } from "./core/history";
 import { ApplyPluginsType } from "/Users/xwj/umiJS-mobx/node_modules/@umijs/runtime";
 import { renderClient } from "/Users/xwj/umiJS-mobx/node_modules/@umijs/renderer-react";
 import { getRoutes } from "./core/routes";
+
+import "../global.less";
 
 const getClientRender = (args: { hot?: boolean; routes?: any[] } = {}) =>
   plugin.applyPlugins({

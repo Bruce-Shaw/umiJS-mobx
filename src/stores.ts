@@ -1,11 +1,15 @@
 import { createContext, useContext } from "react";
 import Loading from "@/models/Loading";
+import Data from "@/models/Data";
 
 export class Stores {
   loading: Loading;
 
+  data: Data;
+
   constructor() {
     this.loading = new Loading();
+    this.data = new Data();
   }
 }
 

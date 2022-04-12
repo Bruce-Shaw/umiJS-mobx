@@ -1,7 +1,7 @@
 import React from "react";
 import { observer } from "mobx-react";
 import { Button, Spin } from "antd";
-import { useStores } from "@/pages/stores";
+import { useStores } from "@/stores";
 import styles from "./style.less";
 
 const IndexPage: React.FC = observer(() => {

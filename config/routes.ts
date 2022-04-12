@@ -13,6 +13,12 @@ export default [
         path: "/index",
         component: "./index",
       },
+      {
+        title: "hooks组件",
+        name: "hooks组件",
+        path: "/hooks",
+        component: "./hooks",
+      },
     ],
   },
 ];

@@ -22,6 +22,13 @@ export function getRoutes() {
           component: require("/Users/xwj/umiJS-mobx/src/pages/index").default,
           exact: true,
         },
+        {
+          title: "hooks组件",
+          name: "hooks组件",
+          path: "/hooks",
+          component: require("/Users/xwj/umiJS-mobx/src/pages/hooks").default,
+          exact: true,
+        },
       ],
     },
   ];
