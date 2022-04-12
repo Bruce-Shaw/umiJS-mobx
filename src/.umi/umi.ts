@@ -25,7 +25,6 @@ const getClientRender = (args: { hot?: boolean; routes?: any[] } = {}) =>
           history: createHistory(args.hot),
           isServer: process.env.__IS_SERVER,
           rootElement: "root",
-          defaultTitle: ``,
         },
       });
       return renderClient(opts);

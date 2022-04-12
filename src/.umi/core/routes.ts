@@ -8,25 +8,20 @@ export function getRoutes() {
   const routes = [
     {
       path: "/",
-      component: require("@/layouts/index").default,
+      component: require("/Users/xwj/umiJS-mobx/src/.umi/plugin-layout/Layout.tsx")
+        .default,
       routes: [
         {
-          path: "/",
-          redirect: "/index",
-          exact: true,
-        },
-        {
-          title: "首页",
           name: "首页",
           path: "/index",
           component: require("/Users/xwj/umiJS-mobx/src/pages/index").default,
           exact: true,
         },
         {
-          title: "hooks组件",
           name: "hooks组件",
           path: "/hooks",
           component: require("/Users/xwj/umiJS-mobx/src/pages/hooks").default,
+          headerRender: false,
           exact: true,
         },
       ],

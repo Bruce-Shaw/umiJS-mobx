@@ -11,6 +11,8 @@ const plugin = new Plugin({
     "__mfsu",
     "getInitialState",
     "initialStateConfig",
+    "layout",
+    "layoutActionRef",
     "request",
   ],
 });
