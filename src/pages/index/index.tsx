@@ -1,20 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import { observer } from "mobx-react";
-import { Button, Spin } from "antd";
-import { useStores } from "@/stores";
+import { Table } from "antd";
+import TabCatalog from "@/components/TabCatalog";
 import styles from "./style.less";
 
 const IndexPage: React.FC = observer(() => {
-  const {
-    loading: { loading, setLoading },
-  } = useStores();
-
+  const [currentTab, setCurrentTab] = useState<string>("index#1");
+  const tabs = [
+    { name: "测试", id: "index#1" },
+    { name: "测试2", id: "index#2" },
+    { name: "测试3", id: "index#3" },
+  ];
   return (
     <div className={styles.container}>
-      <Button onClick={() => setLoading(true, "indexPage")}>Click</Button>
-      <div className={styles.title}>
-        <Spin spinning={loading.get("indexPage") || false} />
-      </div>
+      <TabCatalog
+        list={tabs}
+        currentTab={currentTab}
+        setCurrentTab={setCurrentTab}
+      />
+      <div className={styles.content1} id="index#1" />
+      <div className={styles.content2} id="index#2" />
+      <div className={styles.content3} id="index#3" />
     </div>
   );
 });
