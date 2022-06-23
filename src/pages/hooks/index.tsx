@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { observer } from "mobx-react";
 import {
   Row,
   Col,
@@ -10,17 +9,16 @@ import {
   Table,
   Spin,
 } from "antd";
+import { useModel } from "umi";
 import { RedoOutlined } from "@ant-design/icons";
-import { useStores } from "@/stores";
 import type { TData } from "@/typings/data";
 import type { TPageInfo } from "@/typings/request";
 import styles from "./style.less";
 
-const Hooks: React.FC = observer(() => {
-  const {
-    data: { getDataList, dataList, dataPageInfo },
-    loading: { loading },
-  } = useStores();
+export default () => {
+  const { getHooksDataList, dataList, dataPageInfo, dataLoading } = useModel(
+    "Hooks"
+  );
   const [tempStr, setTempStr] = useState<string>();
   const [tempNum, setTempNum] = useState<number>();
   const [tempBool, setTempBool] = useState<boolean>();
@@ -33,7 +31,7 @@ const Hooks: React.FC = observer(() => {
   const [tempMap, setTempMap] = useState<Map<number, boolean>>(new Map());
 
   useEffect(() => {
-    getDataList();
+    getHooksDataList();
   }, []);
 
   useEffect(() => {
@@ -110,7 +108,7 @@ const Hooks: React.FC = observer(() => {
         </Button>
         <Table
           rowKey="id"
-          loading={loading.get("data") || false}
+          loading={dataLoading}
           columns={columns}
           dataSource={tempList}
           pagination={{
@@ -123,6 +121,4 @@ const Hooks: React.FC = observer(() => {
       </div>
     </div>
   );
-});
-
-export default Hooks;
+};
