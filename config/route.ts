@@ -25,12 +25,18 @@ export default [
   {
     name: "首页",
     path: "/index",
-    component: "./index",
+    component: "./Index",
   },
   {
     name: "hooks组件",
     path: "/hooks",
-    component: "./hooks",
+    component: "./Hooks",
+    headerRender: false,
+  },
+  {
+    name: "懒加载",
+    path: "/lazyCards",
+    component: "./LazyCards",
     headerRender: false,
   },
 ];

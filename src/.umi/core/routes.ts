@@ -14,13 +14,21 @@ export function getRoutes() {
         {
           name: "首页",
           path: "/index",
-          component: require("/Users/xwj/umiJS-mobx/src/pages/index").default,
+          component: require("/Users/xwj/umiJS-mobx/src/pages/Index").default,
           exact: true,
         },
         {
           name: "hooks组件",
           path: "/hooks",
-          component: require("/Users/xwj/umiJS-mobx/src/pages/hooks").default,
+          component: require("/Users/xwj/umiJS-mobx/src/pages/Hooks").default,
+          headerRender: false,
+          exact: true,
+        },
+        {
+          name: "懒加载",
+          path: "/lazyCards",
+          component: require("/Users/xwj/umiJS-mobx/src/pages/LazyCards")
+            .default,
           headerRender: false,
           exact: true,
         },

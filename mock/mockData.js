@@ -8,8 +8,8 @@ const data = Mock.mock({
     data: {
       pageSize: 10,
       pageNow: 1,
-      totalCount: 19,
-      "pages|19": [
+      totalCount: 29,
+      "pages|29": [
         {
           id: "@id",
           name: "@name",
